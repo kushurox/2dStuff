@@ -34,9 +34,9 @@ int main()
 {
     // Plane related
     Vector2<float> origin = {500, 500};
-    Vector3<float> radius = {100, 0, 0};
+    Vector3<float> radius = {300, 0, 0};
 
-    RenderWindow window(VideoMode(1000, 1000), "Ball", Style::Resize);
+    RenderWindow window(VideoMode(1000, 1000), "ball", Style::Resize);
     window.setFramerateLimit(60);
 
     // Ball Related
@@ -44,22 +44,22 @@ int main()
     float x, y;
     CircleShape ball(30);
     bool motion = false; // 0 for circular, 1 for linear
-    CircleShape center(10);
+    CircleShape center(5);
     Vector3<float> velocity;
 
     center.setPosition(origin);
 
     // Line Related
-    RectangleShape line((Vector2<float>){mag_radius, 5});
-    line.setPosition(origin.x+5, origin.y+5);
+    RectangleShape line((Vector2<float>){mag_radius, 2.5});
+    line.setPosition(origin.x+1.25, origin.y+1.25);
 
 
 
     Event event{};
 
     // Angle related
-    Vector3<float> angular_vel = {0, 0, M_PI/2};
-    const auto deg = (float)degrees(angular_vel.z);
+    Vector3<float> angular_vel = {0, 0, M_PI};
+    auto deg = (float)degrees(angular_vel.z);
     float theta=0;
 
     // Clock related
@@ -79,12 +79,13 @@ int main()
                 {
                     velocity = cross_product(angular_vel, radius);
                     motion = true;
+
                 }
                 default:
                     break;
             }
         }
-
+        line.rotate(-deg * et.asSeconds());
         if(not motion) {
             float radian = -radians(theta);
             x = origin.x + (mag_radius * cos(radian));
@@ -92,7 +93,6 @@ int main()
 
             theta += (deg * et.asSeconds());
             ball.setPosition(x - 15, y - 15);
-            line.rotate(-deg * et.asSeconds());
             radius.y = (y - origin.y); // change in Y co-ordinate with respect to origin
             radius.x = radius.y / tan(radian); // same thing but X co-ordinate
         }

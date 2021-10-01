@@ -1,3 +1,5 @@
+# Change paths according to your Binary folder
+
 LIBS = "../libraries/lib"  # Libraries Path
 ICLD = "../libraries/include"  # Include Path
 FRM = "../libraries/Frameworks"  # Frameworks Path
