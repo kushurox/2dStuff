@@ -4,7 +4,7 @@
 I have made this repo to share my graphics programs which are usually 2D physics simulation.
 
 
-#Installation:
+# Installation :
 <br>
 1]Please download the sfml binaries from [here](https://www.sfml-dev.org/download/sfml/2.5.1/)
 <p>
