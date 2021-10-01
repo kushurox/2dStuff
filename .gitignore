@@ -1,0 +1,7 @@
+test
+.idea
+.DS_Store
+cmake-build-debug
+rotational/cmake-build-debug
+rotational/CMakeLists.txt
+libraries
