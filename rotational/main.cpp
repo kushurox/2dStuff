@@ -36,7 +36,7 @@ int main()
     Vector2<float> origin = {500, 500};
     Vector3<float> radius = {100, 0, 0};
 
-    RenderWindow window(VideoMode(1000, 1000), "SFML WORKS!", Style::Resize);
+    RenderWindow window(VideoMode(1000, 1000), "Ball", Style::Resize);
     window.setFramerateLimit(60);
 
     // Ball Related
