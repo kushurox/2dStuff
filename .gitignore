@@ -5,3 +5,4 @@ cmake-build-debug
 rotational/cmake-build-debug
 rotational/CMakeLists.txt
 libraries
+collisons
